@@ -1,0 +1,85 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
+	}
+	repositories {
+		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+group = 'ant-network'
+version = '0.0.1-SNAPSHOT'
+description = "蚂蚁网络"
+
+
+allprojects {
+	apply plugin: 'java'
+	apply plugin: 'eclipse'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+
+	sourceCompatibility = 1.8
+
+
+	repositories {
+		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
+
+	configurations {
+//	all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+//	all*.exclude group: 'io.netty'
+	}
+
+
+	dependencies {
+
+	}
+}
+
+/**
+ * 定义项目依赖关系
+ * common <-- test
+ *    ^		   ^
+ *    |        |
+ *	  --------core <-- <other_project>
+ *
+ */
+project(':ant-network-test') {
+	dependencies {
+		compile(
+				project(":ant-network-common")
+		)
+	}
+}
+project(':ant-network-core') {
+	dependencies {
+		compile(
+				project(":ant-network-common")
+		)
+		testCompile(
+				project(":ant-network-test")
+		)
+	}
+}
+configure(subprojects.findAll {
+	!['ant-network-core','ant-network-common','ant-network-test'].contains(it.name)
+}) {
+	dependencies {
+		compile(
+				project(":ant-network-common"),
+				project(":ant-network-core")
+		)
+		testCompile(
+				project(":ant-network-test")
+		)
+	}
+}
+

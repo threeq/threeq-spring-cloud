@@ -1,0 +1,12 @@
+server:
+  port: ${PORT:2223}
+
+spring:
+  application:
+    name: ant-server
+
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
