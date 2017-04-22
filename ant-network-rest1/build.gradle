@@ -1,8 +1,4 @@
 
-configurations {
-//	all*.exclude group: 'javax.ws.rs', module: 'jsr311-api'
-//	all*.exclude group: 'io.netty'
-}
 
 dependencies {
     compile(

@@ -1,4 +1,4 @@
-package com.threeq.antnetwork.rest;
+package com.threeq.network.rest1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,9 +10,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
-public class AntRestApplication {
+public class AntRest1Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(AntRestApplication.class);
+        SpringApplication.run(AntRest1Application.class);
     }
 }

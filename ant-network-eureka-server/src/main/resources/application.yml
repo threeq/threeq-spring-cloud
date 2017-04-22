@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: ant-network-eureka-service
+    name: ant-network-eureka-server
 
 eureka:
   instance:

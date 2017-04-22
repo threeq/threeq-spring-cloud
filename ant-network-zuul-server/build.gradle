@@ -1,0 +1,11 @@
+
+dependencies {
+    compile(
+            'org.springframework.cloud:spring-cloud-starter-zuul',
+            'org.springframework.cloud:spring-cloud-starter-eureka',
+            'org.springframework.cloud:spring-cloud-starter-feign',
+            'org.springframework.cloud:spring-cloud-netflix-hystrix-stream',
+            'org.springframework.cloud:spring-cloud-starter-bus-amqp',
+            'org.springframework.cloud:spring-cloud-starter-stream-rabbit',
+    )
+}
