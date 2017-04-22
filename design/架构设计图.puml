@@ -1,14 +1,92 @@
 @startuml
 
-package "Some Group" {
-HTTP - [First Component]
-[Another Component]
-}
+node configure [
+    配置管理服务器
+    spring cloud config
+    Archaius
+]
 
-package "Other Groups" {
-FTP - [Second Component]
+actor "客户端" as client
+actor "客户端" as client1
+actor "客户端" as client2
 
-[First Component] --> FTP
-}
+cloud "Zuul Server(边缘服务器)" as edge
+
+agent balance [
+    Ribbon(负载均衡)
+    Hystrix(电路断路器)
+]
+
+cloud "Eureka Server(服务发现和注册)" as discover
+
+node App1 [
+    APP1
+    ---
+    显示
+    业务逻辑
+    数据持久化
+]
+node App2 [
+    APP2
+    ---
+    显示
+    业务逻辑
+    数据持久化
+]
+node App3 [
+    APP3
+    ---
+    显示
+    业务逻辑
+    数据持久化
+]
+
+
+database DB1
+database DB2
+database DB3
+
+client -- edge
+client1 -- edge
+client2 -- edge
+
+edge -- balance
+balance -- discover
+
+discover -- App1
+discover -- App2
+discover -- App3
+
+App1 -- DB1
+App2 -- DB2
+App3 -- DB3
+
+
+configure -up- edge
+configure -right- balance
+configure -- discover
+configure -- App1
+
+
+node dashboard [
+    监控仪表盘
+    ---
+    Hystrix Dashboard
+    Trubine
+]
+
+node moniter [
+    服务监控
+    ---
+    ELK(日志服务器)
+    zipkin(服务调用跟踪)
+    Netflix Atlas(实时业务监控)
+    Simian Army(可靠性监控服务)
+]
+
+node task [
+    批处理任务
+    异步任务处理
+]
 
 @enduml

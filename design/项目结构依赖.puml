@@ -4,7 +4,7 @@
 [common] <-- [core]
 [test] <-- [core]
 
-[core] <-- [业务工程]
-[test] <-- [业务工程]
+[core] <-- [业务子工程]
+[test] <-- [业务子工程]
 
 @enduml

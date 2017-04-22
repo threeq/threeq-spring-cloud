@@ -1,0 +1,10 @@
+@startuml
+
+package "CI/CD 支持系统" {
+    object "docker register" as docker_register
+    object "jenkins/gocd" as ci_cd
+    object "sonar" as sonar
+    object "test 工具" as auto_test
+}
+
+@enduml
