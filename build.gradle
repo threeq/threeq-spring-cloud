@@ -1,6 +1,7 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
+		springBootVersion = '1.5.3.RELEASE'
+//		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
 	}
 	repositories {
 		mavenCentral()
@@ -19,7 +20,7 @@ description = "蚂蚁网络"
 
 allprojects {
 	apply plugin: 'java'
-	apply plugin: 'eclipse'
+	apply plugin: 'idea'
 	apply plugin: 'org.springframework.boot'
 	apply plugin: 'io.spring.dependency-management'
 
@@ -38,6 +39,11 @@ allprojects {
 //	all*.exclude group: 'io.netty'
 	}
 
+	dependencyManagement {
+		imports {
+			mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.BUILD-SNAPSHOT"
+		}
+	}
 
 	dependencies {
 
@@ -46,10 +52,10 @@ allprojects {
 
 /**
  * 定义项目依赖关系
- * common <-- test
- *    ^		   ^
- *    |        |
- *	  --------core <-- <other_project>
+ * common <--- test <------------
+ *    ^		    ^               |
+ *    |         |               |
+ *	  ---------core <----- <其他业务子工程>
  *
  */
 project(':ant-network-test') {
@@ -70,7 +76,9 @@ project(':ant-network-core') {
 	}
 }
 configure(subprojects.findAll {
-	!['ant-network-core','ant-network-common','ant-network-test'].contains(it.name)
+	!['ant-network-core','ant-network-common','ant-network-test',
+		'ant-network-eureka-service'
+	].contains(it.name)
 }) {
 	dependencies {
 		compile(

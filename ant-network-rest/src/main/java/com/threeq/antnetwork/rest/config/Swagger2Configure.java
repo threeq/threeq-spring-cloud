@@ -1,4 +1,4 @@
-package com.threeq.antnetwork.test.config;
+package com.threeq.antnetwork.rest.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,15 +9,16 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @Date 2017/4/20
  * @User three
  */
-@Configuration
+//@Configuration
 //@EnableSwagger2
 public class Swagger2Configure {
-//
+
     @Bean
     public Docket apiDoc() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -33,7 +34,6 @@ public class Swagger2Configure {
                 .title("Spring Boot中使用Swagger2构建RESTful APIs")
                 .description("更多Spring Boot相关文章请关注：http://blog.threeq.me/")
                 .termsOfServiceUrl("http://blog.threeq.me/")
-                .contact("程序猿Threeq")
                 .version("1.0")
                 .build();
     }

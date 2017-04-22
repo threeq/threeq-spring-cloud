@@ -8,5 +8,18 @@ spring:
 
   data:
     mongodb:
-      host: localhost
+      host: server.threeq.me
       port: 27017
+      database: ant-rest
+
+eureka:
+  instance:
+    hostname: localhost
+
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+

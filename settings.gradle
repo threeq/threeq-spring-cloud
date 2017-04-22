@@ -3,4 +3,5 @@ include 'ant-network-reactive'
 include 'ant-network-common'
 include 'ant-network-test'
 include 'ant-network-core'
+include 'ant-network-eureka-service'
 

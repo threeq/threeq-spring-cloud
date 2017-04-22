@@ -1,0 +1,10 @@
+@startuml
+
+[common] <-right- [test]
+[common] <-- [core]
+[test] <-- [core]
+
+[core] <-- [业务工程]
+[test] <-- [业务工程]
+
+@enduml
