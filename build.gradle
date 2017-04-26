@@ -10,6 +10,7 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath('se.transmode.gradle:gradle-docker:1.2')
 	}
 }
 
@@ -17,13 +18,24 @@ group = 'ant-network'
 version = '0.0.1-SNAPSHOT'
 description = "蚂蚁网络"
 
-
 allprojects {
 	apply plugin: 'java'
 	apply plugin: 'idea'
 	apply plugin: 'org.springframework.boot'
 	apply plugin: 'io.spring.dependency-management'
+	apply plugin: 'docker'
 
+	task buildDocker(type: Docker, dependsOn: build) {
+		push = false
+		applicationName = jar.baseName
+		dockerfile = file('src/main/docker/Dockerfile')
+		doFirst {
+			copy {
+				from jar
+				into stageDir
+			}
+		}
+	}
 
 	sourceCompatibility = 1.8
 

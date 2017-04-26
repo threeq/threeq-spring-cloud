@@ -1,14 +1,19 @@
-include 'ant-network-rest'
-include 'ant-network-reactive'
+include 'ant-network-server-eureka'
+include 'ant-network-server-zuul'
+include 'ant-network-server-dashboard'
+include 'ant-network-server-turbine'
+include 'ant-network-server-config'
+
 include 'ant-network-common'
 include 'ant-network-test'
 include 'ant-network-core'
-include 'ant-network-eureka-server'
-include 'ant-network-rest1'
-include 'ant-network-zuul-server'
+
 include 'ant-network-api-service'
-include 'ant-network-dashboard-server'
-include 'ant-network-turbine-server'
 include 'ant-network-security-service'
-include 'ant-network-config-server'
+
+include 'ant-network-rest'
+include 'ant-network-reactive'
+include 'ant-network-rest1'
+
+include 'ant-network-ui-web'
 
