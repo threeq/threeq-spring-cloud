@@ -1,9 +1,9 @@
 server:
-  port: ${PORT:2001}
+  port: ${PORT:2003}
 
 spring:
   application:
-    name: ant-network-zuul-server
+    name: ant-network-server-zuul
 
 eureka:
   client:

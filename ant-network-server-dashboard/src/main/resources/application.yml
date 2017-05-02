@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: ant-network-dashboard-server
+    name: ant-network-server-dashboard
 
 endpoints:
     restart:

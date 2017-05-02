@@ -1,4 +1,4 @@
-package com.threeq.antnetwork.eureka.domain;
+package com.threeq.antnetwork.server.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

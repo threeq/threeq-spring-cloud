@@ -1,9 +1,9 @@
 server:
-  port: ${PORT:2001}
+  port: ${PORT:2002}
 
 spring:
   application:
-    name: ant-network-server-eureka
+    name: ant-network-server-turbine
 
 eureka:
   instance:

@@ -1,4 +1,4 @@
-package com.threeq.antnetwork.eureka.config;
+package com.threeq.antnetwork.server.config;
 
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;

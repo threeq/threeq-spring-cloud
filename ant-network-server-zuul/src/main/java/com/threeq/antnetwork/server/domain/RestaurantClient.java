@@ -1,4 +1,4 @@
-package com.threeq.antnetwork.eureka.domain;
+package com.threeq.antnetwork.server.domain;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

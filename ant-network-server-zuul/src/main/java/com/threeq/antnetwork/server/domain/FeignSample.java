@@ -1,6 +1,4 @@
-package com.threeq.antnetwork.eureka.domain;
-
-import com.threeq.antnetwork.eureka.domain.RestaurantClient;
+package com.threeq.antnetwork.server.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
