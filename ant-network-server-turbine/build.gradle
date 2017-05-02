@@ -1,4 +1,10 @@
 
 
 dependencies {
+    compile(
+            'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-actuator',
+            'org.springframework.cloud:spring-cloud-starter-turbine-stream',
+            'org.springframework.cloud:spring-cloud-starter-stream-rabbit',
+    )
 }

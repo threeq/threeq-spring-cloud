@@ -6,7 +6,7 @@ server:
 
 spring:
   application:
-    name: ant-network-rest
+    name: ant-network-api-service
   aop:
     proxyTargetClass: true
   freemarker:
@@ -16,7 +16,7 @@ spring:
     mongodb:
       host: server.threeq.me
       port: 27017
-      database: ant-rest
+      database: ant-network
 
 hystrix:
   threadpool:
