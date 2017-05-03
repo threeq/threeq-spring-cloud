@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @Date 2017/4/22
  * @User three
  */
-@Component
+//@Component
 public class DiscoveryClientSample implements CommandLineRunner {
     @Autowired
     private DiscoveryClient discoveryClient;

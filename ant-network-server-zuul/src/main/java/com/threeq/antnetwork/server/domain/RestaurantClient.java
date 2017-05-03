@@ -11,7 +11,7 @@ import java.util.Collection;
  * @Date 2017/4/22
  * @User three
  */
-@FeignClient("restaurant-service")
+//@FeignClient("restaurant-service")
 public interface RestaurantClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/v1/restaurants")

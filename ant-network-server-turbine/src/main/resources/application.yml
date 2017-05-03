@@ -15,9 +15,9 @@ spring:
 
 turbine:
     aggregator:
-        clusterConfig: USER-SERVICE,RESTAURANT-SERVICE
+        clusterConfig: ANT-NETORK-REST
 #    clusterNameExpression: new String("default")
-    appConfig: user-service,restaurant-service
+    appConfig: ant-network-rest
 #    clusterNameExpression: 'default'
 #    InstanceMonitor:
 #        eventStream:

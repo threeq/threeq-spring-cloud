@@ -1,6 +1,10 @@
 group "ant-network"
 
 dependencies {
+    compile(
+            'org.springframework.cloud:spring-cloud-starter-config',
+            'org.springframework.cloud:spring-cloud-starter-hystrix',
+    )
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

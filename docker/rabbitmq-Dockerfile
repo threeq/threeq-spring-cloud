@@ -1,0 +1,3 @@
+FROM rabbitmq:3.6-alpine
+
+EXPOSE 4369 5671 5672 25672
