@@ -1,16 +1,12 @@
-package com.threeq.antnetwork.api.config;
+package com.threeq.antnetwork.user.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
-
-import javax.net.ssl.HttpsURLConnection;
 
 /**
  * @Date 2017/5/2

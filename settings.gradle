@@ -11,9 +11,8 @@ include 'ant-network-core'
 include 'ant-network-api-service'
 include 'ant-network-security-service'
 
-include 'ant-network-rest'
+include 'ant-network-business-user'
 include 'ant-network-reactive'
-include 'ant-network-rest1'
 
 include 'ant-network-ui-web'
 

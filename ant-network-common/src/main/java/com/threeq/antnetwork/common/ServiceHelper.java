@@ -63,11 +63,11 @@ public class ServiceHelper {
         return uri;
     }
 
-    public <T> ResponseEntity<T> createOkResponse(T body) {
+    public static  <T> ResponseEntity<T> createOkResponse(T body) {
         return createResponse(body, HttpStatus.OK);
     }
 
-    public <T> ResponseEntity<T> createResponse(T body, HttpStatus httpStatus) {
+    public static  <T> ResponseEntity<T> createResponse(T body, HttpStatus httpStatus) {
         return new ResponseEntity<>(body, httpStatus);
     }
 }

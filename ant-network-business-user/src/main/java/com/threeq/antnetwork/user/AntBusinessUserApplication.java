@@ -1,7 +1,8 @@
-package com.threeq.network.rest1;
+package com.threeq.antnetwork.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
@@ -10,9 +11,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
-public class AntRest1Application {
+@EnableCircuitBreaker
+public class AntBusinessUserApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AntRest1Application.class);
+        SpringApplication.run(AntBusinessUserApplication.class);
     }
 }

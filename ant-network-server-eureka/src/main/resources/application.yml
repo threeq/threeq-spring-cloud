@@ -1,18 +1,49 @@
+
+info:
+  component: Discovery Server
+
 server:
   port: ${PORT:2001}
 
 spring:
   application:
-    name: ant-network-server-eureka
+    name: server-eureka
+  thymeleaf:
+    enabled: false     # Disable Thymeleaf
+
 
 eureka:
   instance:
     hostname: localhost
 
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+#        defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:2001}/eureka/
+        defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://localhost:2001}/eureka/
 
   server:
     wait-time-in-ms-when-sync-empty: 0
+    enableSelfPreservation: false
+
+---
+# For deployment in Docker containers
+spring:
+  profiles: docker
+
+server:
+    port: ${vcap.application.port:8761}
+
+eureka:
+    instance:
+          hostname: eureka
+    client:
+        registerWithEureka: false
+        fetchRegistry: false
+        serviceUrl:
+          defaultZone: http://eureka:2001/eureka/
+    server:
+        waitTimeInMsWhenSyncEmpty: 0
+        enableSelfPreservation: false
 

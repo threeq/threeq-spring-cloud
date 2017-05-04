@@ -1,0 +1,51 @@
+server:
+    port: ${PORT:3001}
+
+spring:
+    application:
+        name: business-user
+    freemarker:
+        enabled: false           # Ignore Eureka dashboard FreeMarker templates
+    thymeleaf:
+        cache: false             # Allow Thymeleaf templates to be reloaded at runtime
+
+    data:
+        mongodb:
+            host: server.threeq.me
+            port: 27017
+            database: ant-network
+
+eureka:
+    instance:
+        leaseRenewalIntervalInSeconds: 3
+        metadataMap:
+            instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+
+    client:
+        registryFetchIntervalSeconds: 5
+        instanceInfoReplicationIntervalSeconds: 5
+        initialInstanceInfoReplicationIntervalSeconds: 5
+        serviceUrl:
+            defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:2001}/eureka/
+        fetchRegistry: true
+
+logging:
+    level:
+        root: INFO
+        com.netflix.hystrix: INFO
+
+
+---
+# For deployment in Docker containers
+spring:
+    profiles: docker
+
+server:
+    port: 3001
+
+eureka:
+    instance:
+        preferIpAddress: true
+    client:
+        serviceUrl:
+            defaultZone: http://eureka:2001/eureka/

@@ -1,4 +1,4 @@
-package com.threeq.antnetwork.rest.config;
+package com.threeq.antnetwork.user.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,15 +1,19 @@
 info:
     component: Zuul Server
 
-server:
-  port: ${PORT:2003}
-  compression:
-      enabled: true
-
 # Spring properties
 spring:
   application:
     name: ant-network-server-zuul
+
+server:
+  port: ${PORT:2003}
+#  ssl:
+#      key-store: classpath:keystore.jks
+#      key-store-password: password
+#      key-password: password
+  compression:
+      enabled: true
 
 
 endpoints:
@@ -23,9 +27,13 @@ endpoints:
 zuul:
     ignoredServices: "*"
     routes:
-        restaurantapi:
-            path: /restapi/**
-            serviceId: ant-network-rest
+        api:
+            path: /api/**
+            serviceId: api-service
+            stripPrefix: true
+        busi:
+            path: /busi/**
+            serviceId: business-user
             stripPrefix: true
 
 hystrix:
