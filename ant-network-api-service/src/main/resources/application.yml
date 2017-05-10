@@ -35,13 +35,15 @@ hystrix:
           thread:
             timeoutInMilliseconds: 6000
 
-#ribbon:
-#  ConnectTimeout: 100
-#  ReadTimeout: 3000
+ribbon:
+  ConnectTimeout: 1000
+  ReadTimeout: 3000
+  maxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
 
 app:
-  ConnectTimeout: 100
-  ReadTimeout: 5000
+  ConnectTimeout: 1000
+  ReadTimeout: 3000
 
 eureka:
     instance:

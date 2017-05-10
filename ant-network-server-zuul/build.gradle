@@ -1,6 +1,8 @@
 
 dependencies {
     compile(
+            'org.springframework.boot:spring-boot-starter-actuator',
+//            'org.springframework.boot:spring-boot-starter-security',
             'org.springframework.cloud:spring-cloud-starter-zuul',
             'org.springframework.cloud:spring-cloud-starter-eureka',
             'org.springframework.cloud:spring-cloud-starter-feign',

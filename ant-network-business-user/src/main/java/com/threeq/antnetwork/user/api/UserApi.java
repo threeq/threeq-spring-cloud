@@ -37,6 +37,7 @@ public class UserApi {
         name = name.trim().toLowerCase();
         Collection<User> users;
         try {
+            logger.info("查询服务");
             // TODO users = userService.findByName(name);
             users = new ArrayList<>();
             users.add(new User());

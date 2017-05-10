@@ -1,11 +1,6 @@
 info:
     component: Zuul Server
 
-# Spring properties
-spring:
-  application:
-    name: ant-network-server-zuul
-
 server:
   port: ${PORT:2003}
 #  ssl:
@@ -23,18 +18,19 @@ endpoints:
         enabled: true
     health:
         sensitive: false
+    sensitive: false
 
-zuul:
-    ignoredServices: "*"
-    routes:
-        api:
-            path: /api/**
-            serviceId: api-service
-            stripPrefix: true
-        busi:
-            path: /busi/**
-            serviceId: business-user
-            stripPrefix: true
+#zuul:
+#    ignoredServices: "*"
+#    routes:
+#        api:
+#            path: /api/**
+#            serviceId: api-service
+#            stripPrefix: true
+#        busi:
+#            path: /busi/**
+#            serviceId: business-user
+#            stripPrefix: true
 
 hystrix:
   threadpool:
@@ -57,30 +53,33 @@ hystrix:
           thread:
             timeoutInMilliseconds: 6000
 
+
 # Discovery Server Access
 eureka:
     instance:
         leaseRenewalIntervalInSeconds: 5
         leaseExpirationDurationInSeconds: 5
+#        statusPageUrlPath: /admin/info
+#        healthCheckUrlPath: /admin/health
         metadataMap:
             instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
 
-    client:
-        registryFetchIntervalSeconds: 5
-        instanceInfoReplicationIntervalSeconds: 5
-        initialInstanceInfoReplicationIntervalSeconds: 5
-        serviceUrl:
-#            defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:8761}/eureka/
-            defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://localhost:2001}/eureka/
-        fetchRegistry: true
+management:
+  port: ${MGMT_SERVER_PORT:2103}
 
 logging:
     level:
       ROOT: INFO
       org.springframework.web: INFO
 
-app:
-  ConnectTimeout: 100
+ribbon:
+  ConnectTimeout: 1000
   ReadTimeout: 3000
+  maxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+
+app:
+  ConnectTimeout: 1000
+  ReadTimeout: 5000
 
 
