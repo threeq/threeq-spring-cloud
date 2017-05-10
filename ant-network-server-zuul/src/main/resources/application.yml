@@ -20,7 +20,17 @@ endpoints:
         sensitive: false
     sensitive: false
 
-#zuul:
+
+ribbon:
+    ConnectTimeout: 1000
+    ReadTimeout: 3000
+    maxAutoRetries: 1
+    MaxAutoRetriesNextServer: 2
+
+zuul:
+    host:
+        connect-timeout-millis: 5000
+        socket-timeout-millis: 10000
 #    ignoredServices: "*"
 #    routes:
 #        api:
@@ -71,12 +81,6 @@ logging:
     level:
       ROOT: INFO
       org.springframework.web: INFO
-
-ribbon:
-  ConnectTimeout: 1000
-  ReadTimeout: 3000
-  maxAutoRetries: 1
-  MaxAutoRetriesNextServer: 2
 
 app:
   ConnectTimeout: 1000
