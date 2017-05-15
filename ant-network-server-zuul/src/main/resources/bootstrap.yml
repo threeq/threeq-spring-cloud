@@ -3,12 +3,13 @@ spring:
     name: ant-network-server-zuul
   application:
     name: ant-network-server-zuul
-#  cloud:
-#    config:
-#      failFast: true
-#      discovery:
-#        service-id: configserver
-#        enabled: true
+  cloud:
+    config:
+      failFast: true
+      profile: local
+      discovery:
+        service-id: configserver
+        enabled: true
 
 server:
   port: ${PORT:2003}

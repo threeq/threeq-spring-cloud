@@ -7,3 +7,16 @@ spring:
 #    location: classpath:keystore.jks
 #    password: ${KEYSTORE_PASSWORD:foobar} # don't use a default in production
 #    alias: test
+
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    instanceInfoReplicationIntervalSeconds: 5
+    initialInstanceInfoReplicationIntervalSeconds: 5
+    serviceUrl:
+#      defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://localhost:2001}/eureka/
+      defaultZone: ${EUREKA_SERVER_URI:http://localhost:2001}/eureka/
+#      defaultZone: ${EUREKA_SERVER_URI:http://${EUREKA_SERVER_USER:}:${EUREKA_SERVER_PASS:}@localhost:2001}/eureka/
+#      defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:8761}/eureka/
+    fetchRegistry: true
+    registerWithEureka: true

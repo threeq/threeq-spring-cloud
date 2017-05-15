@@ -20,8 +20,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/spring-cloud-samples/config-repo
-          basedir: target/config
+          uri: file:///Users/three/workspaces/my-projs/ant-network
+#          basedir: target/config
+          search-paths: config-repo
         encrypt:
           enabled: false
 
