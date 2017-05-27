@@ -1,0 +1,10 @@
+
+dependencies {
+    compile(
+            'org.springframework.cloud:spring-cloud-sleuth-zipkin-stream',
+            'org.springframework.cloud:spring-cloud-stream-binder-rabbit',
+            // 注意使用的版本，如果版本不对，回报错误
+            'io.zipkin.java:zipkin-autoconfigure-ui',
+            'io.zipkin.java:zipkin-autoconfigure-storage-elasticsearch-http:1.23.2',
+    )
+}

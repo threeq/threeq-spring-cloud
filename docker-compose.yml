@@ -10,3 +10,10 @@ services:
             - 5671:5671
             - 5672:5672
             - 25672:25672
+    elasticsearch:
+        build:
+            context: docker
+            dockerfile: es-Dockerfile
+        ports:
+            - 9200:9200
+            - 9300:9300

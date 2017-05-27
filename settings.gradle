@@ -3,6 +3,7 @@ include 'ant-network-server-zuul'
 include 'ant-network-server-dashboard'
 include 'ant-network-server-turbine'
 include 'ant-network-server-config'
+include 'ant-network-server-zipkin'
 
 include 'ant-network-common'
 include 'ant-network-test'
