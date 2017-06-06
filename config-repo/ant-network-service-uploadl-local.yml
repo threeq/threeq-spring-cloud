@@ -1,0 +1,20 @@
+spring:
+    sleuth:
+        sampler:
+            percentage: 1.0
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+
+    http:
+        multipart:
+            max-file-size: 2000Mb
+            max-request-size: 2500Mb
+
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+
+ribbon:
+    ConnectTimeout: 3000
+    ReadTimeout: 60000
