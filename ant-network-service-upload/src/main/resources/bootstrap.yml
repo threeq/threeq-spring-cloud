@@ -7,9 +7,16 @@ spring:
         config:
             failFast: true
             profile: local
+            # 指定使用的版本，可以是 branch 和 tag
+#            label: master
             discovery:
                 service-id: configserver
                 enabled: true
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
 
 server:
     port: ${PORT:3003}

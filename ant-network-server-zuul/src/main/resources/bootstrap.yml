@@ -10,6 +10,11 @@ spring:
             discovery:
                 service-id: configserver
                 enabled: true
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
 
 server:
     port: ${PORT:2003}

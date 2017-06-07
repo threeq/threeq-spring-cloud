@@ -4,6 +4,7 @@ dependencies {
     compile(
             'org.springframework.cloud:spring-cloud-config-server',
             'org.springframework.cloud:spring-cloud-config-monitor',
+            'org.springframework.cloud:spring-cloud-starter-bus-amqp',
             'org.springframework.cloud:spring-cloud-starter-stream-rabbit',
             'org.springframework.cloud:spring-cloud-starter-eureka',
 

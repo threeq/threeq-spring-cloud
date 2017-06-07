@@ -23,6 +23,11 @@ spring:
           uri: file:///Users/three/workspaces/my-projs/ant-network
 #          basedir: target/config
           search-paths: config-repo
+          repos:
+            local:
+                pattern: local*
+                uri: file:///Users/three/workspaces/my-projs/ant-network
+                search-paths: config-repo
         encrypt:
           enabled: false
 
