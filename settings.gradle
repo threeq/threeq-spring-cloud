@@ -18,4 +18,5 @@ include 'ant-network-reactive'
 include 'ant-network-ui-web'
 include 'ant-network-test-integration'
 include 'ant-network-service-upload'
+include 'ant-network-service-sidecar'
 
