@@ -13,37 +13,74 @@ spring:
 
 
 eureka:
-  instance:
-    hostname: localhost
-
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-#        defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:2001}/eureka/
-        defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://localhost:2001}/eureka/
-
-  server:
-    wait-time-in-ms-when-sync-empty: 0
-    enableSelfPreservation: false
-
----
-# For deployment in Docker containers
-spring:
-  profiles: docker
-
-server:
-    port: ${vcap.application.port:8761}
-
-eureka:
     instance:
-          hostname: eureka
+        hostname: localhost
+
     client:
         registerWithEureka: false
         fetchRegistry: false
         serviceUrl:
-          defaultZone: http://eureka:2001/eureka/
+#        defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:2001}/eureka/
+            defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://localhost:2001}/eureka/
+
+    server:
+        wait-time-in-ms-when-sync-empty: 0
+        enableSelfPreservation: false
+
+---
+# For deployment in Docker containers
+spring:
+    profiles: docker-eureka-1
+
+server:
+    port: 8761
+
+eureka:
+    instance:
+          hostname: docker-eureka-1
+    client:
+        registerWithEureka: false
+        fetchRegistry: false
+        serviceUrl:
+          defaultZone: http://docker-eureka-2:8762/eureka/,http://docker-eureka-3:8763/eureka/
     server:
         waitTimeInMsWhenSyncEmpty: 0
         enableSelfPreservation: false
 
+---
+spring:
+    profiles: docker-eureka-2
+
+server:
+    port: 8762
+
+eureka:
+    instance:
+          hostname: docker-eureka-2
+    client:
+        registerWithEureka: false
+        fetchRegistry: false
+        serviceUrl:
+          defaultZone: http://docker-eureka-1:8761/eureka/,http://docker-eureka-3:8763/eureka/
+    server:
+        waitTimeInMsWhenSyncEmpty: 0
+        enableSelfPreservation: false
+
+---
+spring:
+    profiles: docker-eureka-3
+
+server:
+    port: 8763
+
+eureka:
+    instance:
+          hostname: docker-eureka-3
+    client:
+        registerWithEureka: false
+        fetchRegistry: false
+        serviceUrl:
+          defaultZone: http://docker-eureka-1:8761/eureka/,http://docker-eureka-2:8762/eureka/
+    server:
+        waitTimeInMsWhenSyncEmpty: 0
+        enableSelfPreservation: false
