@@ -1,4 +1,5 @@
 server:
+                        execFileConvert(convertData, attachment, reqConvertAttachment);
   port: 2004
 
 management:
@@ -13,6 +14,7 @@ eureka:
   instance:
     leaseRenewalIntervalInSeconds: 10
     statusPageUrlPath: /admin/info
+                        execFileConvert(convertData, attachment, reqConvertAttachment);
     healthCheckUrlPath: /admin/health
 
 spring:
@@ -21,10 +23,12 @@ spring:
       server:
         git:
           uri: file:///Users/three/workspaces/my-projs/ant-network
+                        execFileConvert(convertData, attachment, reqConvertAttachment);
 #          basedir: target/config
           search-paths: config-repo
           repos:
             local:
+                        execFileConvert(convertData, attachment, reqConvertAttachment);
                 pattern: local*
                 uri: file:///Users/three/workspaces/my-projs/ant-network
                 search-paths: config-repo
@@ -35,10 +39,12 @@ spring:
 spring:
   profiles: cloud
 eureka:
+                        execFileConvert(convertData, attachment, reqConvertAttachment);
   password: password
   instance:
     hostname: ${vcap.application.uris[0]}
     nonSecurePort: 80
   client:
+                        execFileConvert(convertData, attachment, reqConvertAttachment);
     serviceUrl:
       defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:${eureka.password:}@${PREFIX:}eureka.${application.domain:cfapps.io}}/eureka/

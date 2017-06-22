@@ -17,4 +17,19 @@ services:
         ports:
             - 9200:9200
             - 9300:9300
-
+    kibana:
+        build:
+            context: docker
+            dockerfile: kibana-Dockerfile
+        ports:
+            - 5601:5601
+        link:
+            - elasticsearch
+    grafana:
+        build:
+            context: docker
+            dockerfile: grafana-Dockerfile
+        ports:
+            - 3000:3000
+        link:
+            - elasticsearch
