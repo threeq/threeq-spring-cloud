@@ -2,8 +2,8 @@
 
 dependencies {
     compile(
-            'org.springframework.boot:spring-cloud-starter-zuul',
-            'org.springframework.boot:spring-cloud-netflix-sidecar',
+            'org.springframework.cloud:spring-cloud-starter-zuul',
+            'org.springframework.cloud:spring-cloud-netflix-sidecar',
             'org.springframework.cloud:spring-cloud-starter-eureka',
     )
 }
