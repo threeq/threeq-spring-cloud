@@ -5,9 +5,9 @@ include 'ant-network-server-turbine'
 include 'ant-network-server-config'
 include 'ant-network-server-zipkin'
 
-include 'ant-network-common'
-include 'ant-network-test'
-include 'ant-network-core'
+include 'ant-network-libs-common'
+include 'ant-network-libs-test'
+include 'ant-network-libs-core'
 
 include 'ant-network-security-service'
 

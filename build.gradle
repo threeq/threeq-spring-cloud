@@ -1,47 +1,61 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.3.RELEASE'
-//		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
+//		springBootVersion = '1.5.3.RELEASE'
+        springBootVersion = '2.0.0.RELEASE'
 	}
 	repositories {
 		mavenCentral()
+        jcenter()
 		maven { url "https://repo.spring.io/snapshot" }
 		maven { url "https://repo.spring.io/milestone" }
+        maven { url "http://repo.spring.io/libs-snapshot-local" }
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 		classpath('se.transmode.gradle:gradle-docker:1.2')
+        classpath("io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE")
 	}
 }
 
 group = 'ant-network'
 version = '0.0.1-SNAPSHOT'
-description = "蚂蚁网络"
+description = "呵呵呵"
 
 allprojects {
 	apply plugin: 'java'
 	apply plugin: 'idea'
-	apply plugin: 'org.springframework.boot'
-	apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
 
-	sourceCompatibility = 1.8
+    sourceCompatibility = 1.8
 
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url 'https://repo.spring.io/release/' }
+        maven { url 'https://repo.spring.io/libs-milestone' }
+        maven { url "http://repo.spring.io/libs-snapshot-local" }
+        maven { url "http://repo.spring.io/libs-milestone-local" }
+        maven { url "http://repo.spring.io/libs-release-local" }
+    }
 
-	repositories {
-		mavenCentral()
-		maven { url "https://repo.spring.io/snapshot" }
-		maven { url "https://repo.spring.io/milestone" }
-	}
+    ext {
+        springCloudVersion = 'Finchley.M8'
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+//            mavenBom 'org.springframework.cloud:spring-cloud-config:2.0.0.M7'
+//            mavenBom 'org.springframework.cloud:spring-cloud-netflix:2.0.0.M7'
+        }
+    }
 
 	configurations {
 //	all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
 //	all*.exclude group: 'io.netty'
-	}
-
-	dependencyManagement {
-		imports {
-			mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.BUILD-SNAPSHOT"
-		}
 	}
 
 	dependencies {
@@ -57,28 +71,28 @@ allprojects {
  *	  ---------core <----- <其他业务子工程>
  *
  */
-project(':ant-network-test') {
+project(':ant-network-libs-test') {
 	dependencies {
 		compile(
-				project(":ant-network-common")
+				project(":ant-network-libs-common")
 		)
 	}
 }
-project(':ant-network-core') {
+project(':ant-network-libs-core') {
 	dependencies {
 		compile(
-				project(":ant-network-common")
+				project(":ant-network-libs-common")
 		)
 		testCompile(
-				project(":ant-network-test")
+				project(":ant-network-libs-test")
 		)
 	}
 }
 configure(subprojects.findAll {
 	![
-			'ant-network-core',
-			'ant-network-common',
-			'ant-network-test'
+			'ant-network-libs-core',
+			'ant-network-libs-common',
+			'ant-network-libs-test'
 	].contains(it.name)
 }) {
 	apply plugin: 'docker'
@@ -97,11 +111,11 @@ configure(subprojects.findAll {
 
 	dependencies {
 		compile(
-				project(":ant-network-common"),
-				project(":ant-network-core")
+				project(":ant-network-libs-common"),
+				project(":ant-network-libs-core")
 		)
 		testCompile(
-				project(":ant-network-test")
+				project(":ant-network-libs-test")
 		)
 	}
 }
