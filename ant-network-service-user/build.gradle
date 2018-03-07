@@ -5,15 +5,12 @@ configurations {
 }
 
 dependencies {
-    compile(
-            'org.springframework.boot:spring-boot-starter-web',
-            'org.springframework.boot:spring-boot-starter-data-mongodb',
-            'org.springframework.cloud:spring-cloud-starter-eureka',
-            'org.springframework.cloud:spring-cloud-netflix-hystrix-stream',
-            'org.springframework.cloud:spring-cloud-starter-bus-amqp',
-            'org.springframework.cloud:spring-cloud-starter-stream-rabbit',
-
-            'io.springfox:springfox-swagger2:2.6.1',
-            'io.springfox:springfox-swagger-ui:2.6.1',
-    )
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+    compile('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
+    compile('org.springframework.boot:spring-boot-starter-cache')
+    compile('org.springframework.boot:spring-boot-starter-data-redis')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 }
+

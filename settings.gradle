@@ -8,6 +8,7 @@ include 'ant-network-server-zipkin'
 include 'ant-network-libs-common'
 include 'ant-network-libs-test'
 include 'ant-network-libs-core'
+include 'ant-network-libs-swagger'
 
 include 'ant-network-security-service'
 
@@ -19,6 +20,5 @@ include 'ant-network-service-upload'
 include 'ant-network-service-sidecar'
 include 'ant-network-service-user'
 include 'ant-network-service-api-integrate'
-
 
 

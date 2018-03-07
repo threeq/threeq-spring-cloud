@@ -59,7 +59,7 @@ allprojects {
 	}
 
 	dependencies {
-
+        compileOnly('org.projectlombok:lombok')
 	}
 }
 
