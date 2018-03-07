@@ -20,5 +20,5 @@ include 'ant-network-service-upload'
 include 'ant-network-service-sidecar'
 include 'ant-network-service-user'
 include 'ant-network-service-api-integrate'
-
+include 'ant-network-libs-tracer'
 
