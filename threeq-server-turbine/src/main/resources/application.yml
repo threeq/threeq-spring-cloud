@@ -1,0 +1,48 @@
+info:
+    component: Turbine Server
+
+server:
+    port: ${PORT:2002}
+
+management:
+    port: 8990
+
+
+spring:
+    application:
+        name: threeq-server-turbine
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+
+#turbine:
+#    aggregator:
+#        clusterConfig: API-SERVICE,BUSINESS-USER
+##    clusterNameExpression: new String("default")
+#    appConfig: api-service,business-user
+##    clusterNameExpression: 'default'
+##    InstanceMonitor:
+##        eventStream:
+##            skipLineLogic: false
+
+eureka:
+    instance:
+        leaseRenewalIntervalInSeconds: 10
+        metadataMap:
+            instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+        prefer-ip-address: true
+    client:
+        serviceUrl:
+#            defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:8761}/eureka/
+            defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://localhost:2001}/eureka/
+        fetchRegistry: true
+
+
+logging:
+    level:
+        root: INFO
+        com.netflix.discovery: 'OFF'
+        org.springframework.integration: DEBUG
+

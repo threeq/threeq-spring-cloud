@@ -1,9 +1,9 @@
-# ant-network
+# threeq
 
 ## docker 打包
 
 ```
-./gradlew -p ant-network-rest buildDocker
+./gradlew -p threeq-rest buildDocker
 ```
 
 ## TODO

@@ -16,7 +16,7 @@ buildscript {
 	}
 }
 
-group = 'ant-network'
+group = 'threeq'
 version = '0.0.1-SNAPSHOT'
 description = "呵呵呵"
 
@@ -68,28 +68,28 @@ allprojects {
  *	  ---------core <----- <其他业务子工程>
  *
  */
-project(':ant-network-libs-test') {
+project(':threeq-libs-test') {
 	dependencies {
 		compile(
-				project(":ant-network-libs-common")
+				project(":threeq-libs-common")
 		)
 	}
 }
-project(':ant-network-libs-core') {
+project(':threeq-libs-core') {
 	dependencies {
 		compile(
-				project(":ant-network-libs-common")
+				project(":threeq-libs-common")
 		)
 		testCompile(
-				project(":ant-network-libs-test")
+				project(":threeq-libs-test")
 		)
 	}
 }
 configure(subprojects.findAll {
 	![
-			'ant-network-libs-core',
-			'ant-network-libs-common',
-			'ant-network-libs-test'
+			'threeq-libs-core',
+			'threeq-libs-common',
+			'threeq-libs-test'
 	].contains(it.name)
 }) {
 	apply plugin: 'docker'
@@ -108,11 +108,11 @@ configure(subprojects.findAll {
 
 	dependencies {
 		compile(
-				project(":ant-network-libs-common"),
-				project(":ant-network-libs-core")
+				project(":threeq-libs-common"),
+				project(":threeq-libs-core")
 		)
 		testCompile(
-				project(":ant-network-libs-test")
+				project(":threeq-libs-test")
 		)
 	}
 }
