@@ -1,0 +1,9 @@
+dependencies {
+    compile(
+            "io.springfox:springfox-swagger2:2.8.0",
+            "io.springfox:springfox-data-rest:2.8.0",
+            "io.springfox:springfox-bean-validators:2.8.0",
+            "org.springframework.boot:spring-boot-starter-thymeleaf",
+            "org.springframework.boot:spring-boot-starter-web",
+    )
+}

@@ -1,4 +1,4 @@
-package com.threeq.antnetwork.service.upload;
+package me.threeq.service.upload;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;

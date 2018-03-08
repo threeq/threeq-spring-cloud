@@ -1,4 +1,4 @@
-package com.threeq.antnetwork.service;
+package me.threeq.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

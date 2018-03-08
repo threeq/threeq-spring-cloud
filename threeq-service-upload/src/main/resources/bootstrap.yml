@@ -38,3 +38,5 @@ eureka:
 
 
 #debug: true
+swagger2:
+    base-package: me.threeq.service
