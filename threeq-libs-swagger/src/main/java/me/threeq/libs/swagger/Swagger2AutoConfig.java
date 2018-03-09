@@ -34,7 +34,7 @@ import static com.google.common.collect.Lists.newArrayList;
  * @User three
  */
 @Configuration
-//@ConditionalOnProperty(name = "swagger2.base-package")
+@ConditionalOnProperty(name = "swagger2.base-package")
 @EnableSwagger2
 @Import({springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration.class,
         springfox.documentation.spring.data.rest.configuration.SpringDataRestConfiguration.class})
@@ -49,8 +49,8 @@ public class Swagger2AutoConfig extends WebMvcConfigurationSupport {
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         // Make Swagger meta-data available via <baseURL>/v2/api-docs/
-        registry.addResourceHandler("/swagger-ui//**")
-                .addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/swagger-ui/**")
+                .addResourceLocations("classpath:/META-INF/resources/swagger-ui/");
         // Make Swagger UI available via <baseURL>/apis.html
         registry.addResourceHandler("/api-ui.html")
                 .addResourceLocations("classpath:/META-INF/resources/");
@@ -60,7 +60,7 @@ public class Swagger2AutoConfig extends WebMvcConfigurationSupport {
     public Docket petApi() {
         return new Docket(DocumentationType.SWAGGER_2)//<3>
                 .select()//<4>
-//                .apis(RequestHandlerSelectors.basePackage(basePackage))//<5>
+                .apis(RequestHandlerSelectors.basePackage(basePackage))//<5>
                 .paths(PathSelectors.any())//<6>
                 .build()//<7>
                 .apiInfo(apiInfo())

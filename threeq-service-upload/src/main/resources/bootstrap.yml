@@ -12,11 +12,12 @@ spring:
             discovery:
                 service-id: configserver
                 enabled: true
-    rabbitmq:
-        host: localhost
-        port: 5672
-        username: guest
-        password: guest
+#    rabbitmq:
+#        host: localhost
+#        port: 5672
+#        username: guest
+#        password: guest
+
 
 server:
     port: ${PORT:3003}
@@ -38,5 +39,3 @@ eureka:
 
 
 #debug: true
-swagger2:
-    base-package: me.threeq.service
