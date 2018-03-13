@@ -13,7 +13,6 @@ include 'threeq-security-service'
 
 include 'threeq-reactive'
 
-include 'threeq-ui-web'
 include 'threeq-test-integration'
 include 'threeq-service-upload'
 include 'threeq-service-sidecar'

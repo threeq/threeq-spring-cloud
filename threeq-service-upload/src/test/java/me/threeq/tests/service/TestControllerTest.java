@@ -1,7 +1,7 @@
 package me.threeq.tests.service;
 
-import me.threeq.service.demo.DemoController;
-import me.threeq.service.demo.DemoService;
+import me.threeq.boot.service.demo.DemoController;
+import me.threeq.boot.service.demo.DemoService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

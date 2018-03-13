@@ -1,6 +1,6 @@
 package com.threeq.antnetwork;
 
-import com.threeq.antnetwork.test.BaseTest;
+import me.threeq.boot.test.BaseTest;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,6 +1,6 @@
 package me.threeq.tests.service;
 
-import me.threeq.service.AntUploadApplication;
+import me.threeq.boot.service.AntUploadApplication;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
