@@ -8,7 +8,8 @@
 
 ## TODO
 
-- [ ] docker／docker-compose
+- [ ] 全局上下文拦截器
+- [ ] 公共依赖 jar 自动发布到私服【jenkins -> nexus】 
 - [x] 熔断服务 hystrix api service
 - [x] 监控服务 tuibine hystrix-dashboard
 - [x] 边缘服务 zuul
@@ -21,18 +22,18 @@
 - [x] 配置服务 config，使用 bus 作为配置刷新出发 /bus/refresh
 - [x] config 高可用（集群），启动指向同一个 git 仓库的多个 config 微服务实例，注册到 eureka 中即可
 - [ ] 安全服务器 security service
-- [ ] UI
 - [x] 单元测试
 - [x] 集成测试
+- [ ] docker／docker-compose
 - [ ] CI/CD
 - [ ] 日志收集 ELK / Grafana / flume / Kafka 
-- [x] 服务调用跟踪 jaeger， 使用消息中间件收集数据 RabbitMq，ElasticSearch 做存储
-- [ ] demo 实例
+- [x] 服务调用跟踪 jaeger
+- [x] demo 实例
 - [ ] Sidecar 整合非JVM服务，用于老系统升级方案
-- [ ] 存储 mongo / mysql
+- [ ] 存储 mongo / mysql， mybatis / jap
 - [ ] 缓存 redis
 - [ ] 分布式锁 redis
 
 ## 问题
 
-1. 集群更新过后各个服务的注册表修改问题
+1. 集群 eureka 更新过后各个服务的注册表修改问题
