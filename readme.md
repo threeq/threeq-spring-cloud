@@ -29,7 +29,9 @@
 - [x] 服务调用跟踪 jaeger， 使用消息中间件收集数据 RabbitMq，ElasticSearch 做存储
 - [ ] demo 实例
 - [ ] Sidecar 整合非JVM服务，用于老系统升级方案
-- [ ] 存储 ？？？
+- [ ] 存储 mongo / mysql
+- [ ] 缓存 redis
+- [ ] 分布式锁 redis
 
 ## 问题
 
