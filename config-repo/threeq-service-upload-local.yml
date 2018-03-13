@@ -1,4 +1,6 @@
 spring:
+    application:
+        name: threeq-service-upload
     sleuth:
         sampler:
             percentage: 1.0
@@ -21,3 +23,14 @@ ribbon:
 
 swagger2:
     base-package: me.threeq.service
+
+opentracing:
+    spring:
+        cloud:
+            websocket:
+                enabled: false
+            feign:
+                enabled: false
+    tracer:
+        jaeger:
+            end-point:

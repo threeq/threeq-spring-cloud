@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableEurekaClient
-@ComponentScan(basePackages = "me.threeq ")
+@ComponentScan(basePackages = "me.threeq")
 public class AntUploadApplication {
 
     public static void main(String[] args) {
