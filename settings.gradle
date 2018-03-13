@@ -8,6 +8,7 @@ include 'threeq-libs-common'
 include 'threeq-libs-test'
 include 'threeq-libs-core'
 include 'threeq-libs-swagger'
+include 'threeq-libs-tracer'
 
 include 'threeq-security-service'
 
@@ -18,5 +19,3 @@ include 'threeq-service-upload'
 include 'threeq-service-sidecar'
 include 'threeq-service-user'
 include 'threeq-service-api-integrate'
-include 'threeq-libs-tracer'
-

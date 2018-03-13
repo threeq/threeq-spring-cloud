@@ -6,6 +6,11 @@
 ./gradlew -p threeq-rest buildDocker
 ```
 
+## 说明
+1. `server` 为基础服务，以容器方式独立运行
+2. `libs` 为公共基础库，以 jar 方式放入发不到私服，其他项目 service 项目使用 gradle 管理其依赖版本。单元测试覆盖率 >95%
+3. `service` 为业务服务，每个业务服务单独建立开发工程 
+
 ## TODO
 
 - [ ] 全局上下文拦截器

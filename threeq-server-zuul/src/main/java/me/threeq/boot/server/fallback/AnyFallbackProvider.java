@@ -1,6 +1,6 @@
 package me.threeq.boot.server.fallback;
 
-import org.springframework.cloud.netflix.zuul.filters.route.ZuulFallbackProvider;
+import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,14 +16,14 @@ import java.nio.charset.Charset;
  * 微服务错误回退定义
  */
 @Component
-public class AnyFallbackProvider implements ZuulFallbackProvider {
+public class AnyFallbackProvider implements FallbackProvider {
     @Override
     public String getRoute() {
         return null;
     }
 
     @Override
-    public ClientHttpResponse fallbackResponse() {
+    public ClientHttpResponse fallbackResponse(String route, Throwable cause) {
         return new ClientHttpResponse() {
             @Override
             public HttpHeaders getHeaders() {
@@ -61,4 +61,5 @@ public class AnyFallbackProvider implements ZuulFallbackProvider {
             }
         };
     }
+
 }
