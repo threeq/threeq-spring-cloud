@@ -16,7 +16,7 @@
 - [ ] 全局上下文拦截器
 - [ ] 公共依赖 jar 自动发布到私服【jenkins -> nexus】 
 - [x] 熔断服务 hystrix api service
-- [x] 监控服务 tuibine hystrix-dashboard
+- [ ] 监控服务 tuibine hystrix-dashboard
 - [x] 边缘服务 zuul
 - [x] zuul 动态加载路由
 - [x] zuul 高可用（集群），启动多个实例。在实际项目中情况一和情况二可以同时使用

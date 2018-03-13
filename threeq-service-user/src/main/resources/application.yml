@@ -3,7 +3,7 @@ server:
 
 spring:
     application:
-        name: business-user
+        name: threeq-service-user
     freemarker:
         enabled: false           # Ignore Eureka dashboard FreeMarker templates
     thymeleaf:
@@ -42,6 +42,16 @@ logging:
         root: INFO
         com.netflix.hystrix: INFO
 
+opentracing:
+    spring:
+        cloud:
+            websocket:
+                enabled: false
+            feign:
+                enabled: false
+    tracer:
+        jaeger:
+            end-point:
 
 ---
 # For deployment in Docker containers

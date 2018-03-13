@@ -1,9 +1,13 @@
 spring:
-    sleuth:
-        sampler:
-            percentage: 1.0
     rabbitmq:
         host: localhost
         port: 5672
         username: guest
         password: guest
+opentracing:
+    spring:
+        cloud:
+            websocket:
+                enabled: false
+            feign:
+                enabled: false
