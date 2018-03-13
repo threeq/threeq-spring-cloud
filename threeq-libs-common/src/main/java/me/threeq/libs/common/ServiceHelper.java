@@ -1,4 +1,4 @@
-package com.threeq.antnetwork.common;
+package me.threeq.libs.common;
 
 import java.net.URI;
 import org.slf4j.Logger;

@@ -37,5 +37,9 @@ eureka:
         fetchRegistry: true
         registerWithEureka: true
 
+logging:
+    pattern:
+        level: <%X{RequestId}> %5p
+
 
 #debug: true
