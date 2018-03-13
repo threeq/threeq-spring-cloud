@@ -26,7 +26,7 @@
 - [x] 集成测试
 - [ ] CI/CD
 - [ ] 日志收集 ELK / Grafana / flume / Kafka 
-- [x] 服务调用跟踪 zipkin， 使用消息中间件收集数据 RabbitMq，ElasticSearch 做存储
+- [x] 服务调用跟踪 jaeger， 使用消息中间件收集数据 RabbitMq，ElasticSearch 做存储
 - [ ] demo 实例
 - [ ] Sidecar 整合非JVM服务，用于老系统升级方案
 - [ ] 存储 ？？？

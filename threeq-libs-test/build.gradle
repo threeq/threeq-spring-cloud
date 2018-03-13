@@ -1,7 +1,13 @@
 //group 'threeq'
 
 dependencies {
+    compile("org.junit.jupiter:junit-jupiter-api")
+    compile("org.junit.jupiter:junit-jupiter-engine")
+    compile("org.junit.platform:junit-platform-engine")
+    compile("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
+    compile("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
+
     compile('org.springframework.boot:spring-boot-starter-test')
-    compile('org.springframework.restdocs:spring-restdocs-mockmvc')
+//    compile('org.springframework.restdocs:spring-restdocs-mockmvc')
     compile('org.springframework.cloud:spring-cloud-stream-test-support')
 }
