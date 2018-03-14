@@ -6,6 +6,7 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @Date 2017/4/22
@@ -16,6 +17,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableEurekaClient
 @EnableCircuitBreaker
 @EnableFeignClients
+@ComponentScan("me.threeq")
 public class AntEdgeApplication {
 
     public static void main(String[] args) {

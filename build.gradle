@@ -3,6 +3,7 @@ buildscript {
         springBootVersion = '2.0.0.RELEASE'
 	}
 	repositories {
+		mavenLocal()
 		mavenCentral()
         jcenter()
 		maven { url "https://repo.spring.io/snapshot" }
@@ -31,6 +32,7 @@ allprojects {
     sourceCompatibility = 1.8
 
     repositories {
+		mavenLocal()
         mavenCentral()
         jcenter()
         maven { url "https://repo.spring.io/snapshot" }
