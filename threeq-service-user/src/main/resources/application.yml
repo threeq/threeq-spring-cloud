@@ -22,6 +22,9 @@ spring:
         port: 5672
         username: guest
         password: guest
+logging:
+    pattern:
+        level: <%X{RequestId}> %5p
 
 eureka:
     instance:

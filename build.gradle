@@ -59,7 +59,7 @@ allprojects {
 
 	configurations {
 //	all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
-//	all*.exclude group: 'io.netty'
+//	all*.exclude group: 'ch.qos.logback'
 	}
 
 	dependencies {
