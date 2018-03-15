@@ -1,8 +1,8 @@
 spring:
     config:
-        name: threeq-service-upload
+        name: threeq-service-user
     application:
-        name: threeq-service-upload
+        name: threeq-service-user
     cloud:
         config:
             failFast: true
@@ -20,7 +20,7 @@ spring:
 
 
 server:
-    port: ${PORT:3003}
+    port: ${PORT:3001}
     compression:
         enabled: true
 
@@ -36,6 +36,9 @@ eureka:
 #           defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:8761}/eureka/
         fetchRegistry: true
         registerWithEureka: true
+        healthcheck:
+            # 一定要启用健康检查
+            enabled: true
 
 logging:
     pattern:

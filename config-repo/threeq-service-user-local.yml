@@ -1,0 +1,38 @@
+spring:
+    freemarker:
+        enabled: false           # Ignore Eureka dashboard FreeMarker templates
+    thymeleaf:
+        cache: false             # Allow Thymeleaf templates to be reloaded at runtime
+    data:
+        mongodb:
+            host: 127.0.0.1
+            port: 27017
+            database: threeq
+    sleuth:
+        sampler:
+            percentage: 1.0
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+
+management:
+    # 如果改为/admin，那么此时的访问路径为/admin/health与/admin/hystrix.stream
+    context-path: /
+
+logging:
+    level:
+        root: INFO
+        com.netflix.hystrix: INFO
+
+opentracing:
+    spring:
+        cloud:
+            websocket:
+                enabled: false
+            feign:
+                enabled: false
+    tracer:
+        jaeger:
+            end-point:

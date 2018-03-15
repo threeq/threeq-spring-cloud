@@ -1,18 +1,17 @@
 //group "threeq"
 
 dependencies {
-    compile(
-            "org.springframework.cloud:spring-cloud-starter-config",
-            // 提供服务监控点
-            "org.springframework.boot:spring-boot-starter-actuator",
-            "org.springframework.cloud:spring-cloud-starter-netflix-hystrix",
-            'org.springframework.cloud:spring-cloud-stream',
-            'org.springframework.cloud:spring-cloud-stream-binder-rabbit',
-    )
+    compile("org.springframework.cloud:spring-cloud-starter-config")
+    // 提供服务监控点
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.cloud:spring-cloud-starter-netflix-hystrix")
+//    compile("org.springframework.cloud:spring-cloud-netflix-hystrix-stream")
+    compile('org.springframework.cloud:spring-cloud-stream')
+    compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
+
     compile('javax.servlet:javax.servlet-api')
     compile('org.springframework.cloud:spring-cloud-starter-netflix-ribbon')
     compile('org.springframework.cloud:spring-cloud-starter-openfeign')
-    compile('org.springframework.cloud:spring-cloud-bus')
 
     testCompile("org.junit.jupiter:junit-jupiter-api")
     testCompile("org.junit.jupiter:junit-jupiter-engine")

@@ -1,8 +1,29 @@
 
+configurations {
+    all*.exclude group: 'com.netflix.rxnetty', module:'rx-netty'
+}
 
 dependencies {
-    compile('org.springframework.cloud:spring-cloud-starter-netflix-turbine')
-    compile('org.springframework.cloud:spring-cloud-starter-netflix-turbine-stream')
-    compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
+    // turbine
+//    compile('org.springframework.cloud:spring-cloud-starter-netflix-turbine')
+//    compile('com.netflix.turbine:turbine-core:1.0.0') {
+//        exclude group: 'org.slf4j', module: 'slf4j-simple'
+//    }
+
+    // turbine stream
+    compile('org.springframework.cloud:spring-cloud-starter-netflix-turbine-stream') {
+        exclude group: 'org.apache.tomcat.embed'
+    }
+//    compile('com.netflix.turbine:turbine-core:2.0.0-DP.1') {
+//        exclude group: 'org.slf4j', module: 'slf4j-simple'
+//        exclude group: 'io.reactivex'
+//    }
     compile('io.netty:netty-handler:4.1.22.Final')
+
+    compile('io.reactivex.rxjava2:rxjava:2.1.10')
+    compile('io.reactivex:rxjava-reactive-streams:1.2.1')
+    compile('io.reactivex:rxnetty:0.5.1')
+    compile('io.reactivex:rxnetty-contexts:0.5.1')
+    compile('io.reactivex:rxnetty-servo:0.5.1')
+
 }

@@ -1,14 +1,14 @@
 buildscript {
 	ext {
         springBootVersion = '2.0.0.RELEASE'
+		springCloudVersion = 'Finchley.M8'
+		springCloudStreamVersion = 'Elmhurst.RC3'
 	}
 	repositories {
 		mavenLocal()
 		mavenCentral()
-        jcenter()
-		maven { url "https://repo.spring.io/snapshot" }
 		maven { url "https://repo.spring.io/milestone" }
-        maven { url "http://repo.spring.io/libs-snapshot-local" }
+		jcenter()
 	}
 	dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -34,18 +34,17 @@ allprojects {
     repositories {
 		mavenLocal()
         mavenCentral()
-        jcenter()
-        maven { url "https://repo.spring.io/snapshot" }
+//        maven { url "https://repo.spring.io/snapshot" }
         maven { url "https://repo.spring.io/milestone" }
         maven { url 'https://repo.spring.io/release/' }
         maven { url 'https://repo.spring.io/libs-milestone' }
-        maven { url "http://repo.spring.io/libs-snapshot-local" }
-        maven { url "http://repo.spring.io/libs-milestone-local" }
-        maven { url "http://repo.spring.io/libs-release-local" }
-    }
+//        maven { url "http://repo.spring.io/libs-snapshot-local" }
+//        maven { url "http://repo.spring.io/libs-milestone-local" }
+//        maven { url "http://repo.spring.io/libs-release-local" }
+		jcenter()
+	}
 
     ext {
-        springCloudVersion = 'Finchley.M8'
 		junitJupiterVersion="5.1.0"
 		junitPlatformVersion="1.1.0"
 		junitVintageVersion="5.1.0"
@@ -54,16 +53,17 @@ allprojects {
     dependencyManagement {
         imports {
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+			mavenBom "org.springframework.cloud:spring-cloud-stream-dependencies:${springCloudStreamVersion}"
         }
     }
 
 	configurations {
-//	all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
-//	all*.exclude group: 'ch.qos.logback'
+		all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
 	}
 
 	dependencies {
         compileOnly('org.projectlombok:lombok')
+		compile('org.springframework.boot:spring-boot-starter-undertow')
 	}
 }
 

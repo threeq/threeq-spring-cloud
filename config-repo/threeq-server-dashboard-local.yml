@@ -1,0 +1,8 @@
+
+endpoints:
+    restart:
+        enabled: true
+    shutdown:
+        enabled: true
+
+

@@ -1,0 +1,24 @@
+
+spring:
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+
+#turbine:
+#    aggregator:
+#        clusterConfig: THREEQ-SERVICE-USER
+#    clusterNameExpression: new String("default")
+#    appConfig: threeq-service-user
+#    clusterNameExpression: 'default'
+#    InstanceMonitor:
+#        eventStream:
+#            skipLineLogic: false
+
+logging:
+    level:
+        root: INFO
+        com.netflix.discovery: 'OFF'
+        org.springframework.integration: DEBUG
+

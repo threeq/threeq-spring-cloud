@@ -1,28 +1,26 @@
+server:
+    port: ${PORT:2000}
+    compression:
+        enabled: true
 spring:
     config:
-        name: threeq-service-upload
+        name: threeq-server-dashboard
     application:
-        name: threeq-service-upload
-    cloud:
-        config:
-            failFast: true
-            profile: local
-            # 指定使用的版本，可以是 branch 和 tag
-#            label: master
-            discovery:
-                service-id: configserver
-                enabled: true
+        name: threeq-server-dashboard
+#    cloud:
+#        config:
+#            failFast: true
+#            profile: local
+#            # 指定使用的版本，可以是 branch 和 tag
+##            label: master
+#            discovery:
+#                service-id: configserver
+#                enabled: true
     rabbitmq:
         host: localhost
         port: 5672
         username: guest
         password: guest
-
-
-server:
-    port: ${PORT:3003}
-    compression:
-        enabled: true
 
 eureka:
     client:
@@ -36,10 +34,15 @@ eureka:
 #           defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:8761}/eureka/
         fetchRegistry: true
         registerWithEureka: true
+        healthcheck:
+            # 一定要启用健康检查
+            enabled: true
 
 logging:
     pattern:
         level: <%X{RequestId}> %5p
-
+    level:
+        ROOT: INFO
+        org.springframework.web: WARN
 
 #debug: true

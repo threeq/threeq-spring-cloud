@@ -1,28 +1,22 @@
 spring:
     config:
-        name: threeq-service-upload
+        name: threeq-server-turbine
     application:
-        name: threeq-service-upload
+        name: threeq-server-turbine
     cloud:
         config:
             failFast: true
             profile: local
-            # 指定使用的版本，可以是 branch 和 tag
-#            label: master
             discovery:
                 service-id: configserver
                 enabled: true
-    rabbitmq:
-        host: localhost
-        port: 5672
-        username: guest
-        password: guest
 
+info:
+    component: Turbine Server
 
 server:
-    port: ${PORT:3003}
-    compression:
-        enabled: true
+    port: ${PORT:2002}
+turbine.stream.port: 8989
 
 eureka:
     client:
@@ -36,10 +30,6 @@ eureka:
 #           defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:password@localhost:8761}/eureka/
         fetchRegistry: true
         registerWithEureka: true
-
-logging:
-    pattern:
-        level: <%X{RequestId}> %5p
 
 
 #debug: true

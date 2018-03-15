@@ -45,3 +45,7 @@ services:
           - 16686:16686
           - 14268:14268
           - 9411:9411
+    mongodb:
+        image: mongo
+        ports:
+          - 27017:27017
