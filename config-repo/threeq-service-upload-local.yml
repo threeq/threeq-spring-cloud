@@ -15,6 +15,13 @@ spring:
             max-file-size: 2000Mb
             max-request-size: 2500Mb
 
+management:
+    endpoints:
+        web:
+            base-path: /
+            exposure:
+                include: '*'
+
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 
 ribbon:
