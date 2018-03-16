@@ -2,10 +2,11 @@
 
 dependencies {
     compile("org.springframework.cloud:spring-cloud-starter-config")
+    compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")
     // 提供服务监控点
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.cloud:spring-cloud-starter-netflix-hystrix")
-//    compile("org.springframework.cloud:spring-cloud-netflix-hystrix-stream")
+    compile("org.springframework.cloud:spring-cloud-netflix-hystrix-stream")
     compile('org.springframework.cloud:spring-cloud-stream')
     compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
 

@@ -13,7 +13,9 @@ spring:
 
 info:
     component: Turbine Server
-
+turbine:
+    stream:
+        enabled: false
 server:
     port: ${PORT:2002}
 

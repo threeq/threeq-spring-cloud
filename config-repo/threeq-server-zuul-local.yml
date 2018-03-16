@@ -11,3 +11,9 @@ opentracing:
                 enabled: false
             feign:
                 enabled: false
+management:
+    endpoints:
+        web:
+            base-path: /
+            exposure:
+                include: '*'

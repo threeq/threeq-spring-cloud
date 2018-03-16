@@ -3,7 +3,8 @@ package me.threeq.boot.server;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.turbine.EnableTurbine;
+//import org.springframework.cloud.netflix.turbine.EnableTurbine;
+import org.springframework.cloud.netflix.turbine.stream.EnableTurbineStream;
 
 /**
  * @Date 2017/4/22
@@ -11,7 +12,7 @@ import org.springframework.cloud.netflix.turbine.EnableTurbine;
  */
 @SpringBootApplication
 @EnableEurekaClient
-@EnableTurbine
+@EnableTurbineStream
 public class AntTurbineApplication {
 
     public static void main(String[] args) {
