@@ -29,7 +29,7 @@ spring:
           repos:
             local:
                 pattern: local*
-                uri: file:///Users/three/workspaces/github-projs/threeq-spring-cloud
+                uri: file:/Users/three/workspaces/github-projs/threeq-spring-cloud
                 search-paths: config-repo
         encrypt:
           enabled: false
