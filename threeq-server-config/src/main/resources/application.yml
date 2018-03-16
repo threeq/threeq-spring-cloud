@@ -22,7 +22,8 @@ spring:
     config:
       server:
         git:
-          uri: file:///Users/three/workspaces/github-projs/threeq-spring-cloud
+#          uri: file:///Users/three/workspaces/github-projs/threeq-spring-cloud
+          uri: https://github.com/threeq/threeq-spring-cloud.git
 #          basedir: target/config
           search-paths: config-repo
           repos:

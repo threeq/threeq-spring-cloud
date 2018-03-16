@@ -20,5 +20,5 @@ logging:
     level:
         root: INFO
         com.netflix.discovery: 'OFF'
-        org.springframework.integration: INFO
+        org.springframework.integration: DEBUG
 
