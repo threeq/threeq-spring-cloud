@@ -16,7 +16,6 @@ info:
 
 server:
     port: ${PORT:2002}
-turbine.stream.port: 8989
 
 eureka:
     client:

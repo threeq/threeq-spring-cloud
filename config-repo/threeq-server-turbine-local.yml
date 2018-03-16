@@ -6,11 +6,11 @@ spring:
         username: guest
         password: guest
 
-#turbine:
-#    aggregator:
-#        clusterConfig: THREEQ-SERVICE-USER
+turbine:
+    aggregator:
+        clusterConfig: MAIN
 #    clusterNameExpression: new String("default")
-#    appConfig: threeq-service-user
+    appConfig: threeq-service-user
 #    clusterNameExpression: 'default'
 #    InstanceMonitor:
 #        eventStream:

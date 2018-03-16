@@ -16,10 +16,14 @@ spring:
         port: 5672
         username: guest
         password: guest
-
 management:
-    # 如果改为/admin，那么此时的访问路径为/admin/health与/admin/hystrix.stream
-    context-path: /
+    endpoints:
+        web:
+            base-path: /
+            exposure:
+                include: '*'
+#        prometheus:
+#            enabled: true
 
 logging:
     level:
